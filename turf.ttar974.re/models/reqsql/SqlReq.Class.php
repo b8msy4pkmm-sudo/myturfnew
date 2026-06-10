@@ -61,7 +61,6 @@ class SqlModel extends AccessDB
         if (count($orderBy)>0)$req .= " ORDER BY ";
         if (count($orderBy)===2) $req.= "$orderBy[0] $orderBy[1] ";
         if (count($orderBy)===4) $req.= "$orderBy[0] $orderBy[1],  $orderBy[2] $orderBy[3]";
-        //echo $req;
         $stmt = $this->getBdd()->prepare($req);
         $this->queryStmtBuilt($stmt,$datasConditions);
         $stmt -> execute();
@@ -99,30 +98,12 @@ class SqlModel extends AccessDB
         if (count($orderBy)>0)$req .= " ORDER BY ";
         if (count($orderBy)===2) $req.= "$orderBy[0] $orderBy[1] ";
         if (count($orderBy)===4) $req.= "$orderBy[0] $orderBy[1],  $orderBy[2] $orderBy[3]";
-        //echo $req;
         $stmt = $this->getBdd()->prepare($req);
         $this->queryStmtBuilt($stmt,$datasConditions);
         $stmt -> execute();
         $resultat=$stmt->fetchAll(\PDO::FETCH_ASSOC);
         $stmt -> closeCursor();
         return $resultat;
-    }
-    public function insertOneRowInDataTable_initial(string $table, array $datasToInsert)
-    {
-        $req   = "INSERT INTO $table (";
-        $req  .= $this->insertSequelBeforeValue(',',$datasToInsert);
-        $req  .= ") VALUES (";
-        $req  .= $this->insertSequelAfterValue(',',$datasToInsert);
-        $req  .= ")";
-        $stmt  = $this -> getBdd() -> prepare($req);
-        foreach ($datasToInsert as $index => $value) {
-            $pdo  =  (is_numeric($value))?\PDO::PARAM_INT:\PDO::PARAM_STR;
-            $stmt -> bindValue(":".$index,$value,$pdo);
-        }
-        $stmt -> execute();
-        $estModifier = ($stmt -> rowCount() > 0);
-        $stmt -> closeCursor();
-        return $estModifier;
     }
     public function insertOneRowInDataTable(string $table, array $datasToInsert)
     {
@@ -282,7 +263,6 @@ class SqlModel extends AccessDB
                     {
                         $pdo=\PDO::PARAM_STR;
                     }
-                    //$pdo  =  (is_numeric($queryConditions))?\PDO::PARAM_STR:\PDO::PARAM_STR;
                     $stmt -> bindValue(":".$index.$i, $queryConditions[$i], $pdo);
                 }
             }
@@ -300,8 +280,6 @@ class SqlModel extends AccessDB
                 {
                     $pdo=\PDO::PARAM_STR;
                 }
-                
-                // $pdo  =  (is_numeric($queryConditions))?\PDO::PARAM_INT:\PDO::PARAM_STR;
                 $stmt -> bindValue(":".$index, $queryConditions, $pdo);
             }
         }
@@ -318,69 +296,5 @@ class SqlModel extends AccessDB
         return $req;
     }
 
-    private function queryStmtBuilt_test(object $stmt, array $allQueryConditions)
-    {
-        foreach ($allQueryConditions as $index => $queryConditions) 
-        {
-            if(is_array($queryConditions))
-            {
-                array_shift($queryConditions);
-                for ($i=0;$i<count($queryConditions);$i++)
-                {
-                    if (is_numeric($queryConditions)){
-                        if (is_float($queryConditions))
-                        {
-                            $pdo=\PDO::PARAM_STR;
-                        }else{
-                            $pdo=\PDO::PARAM_INT;
-                        }
-                    }else
-                    {
-                        $pdo=\PDO::PARAM_STR;
-                    }
-                    $stmt -> bindValue(":".$index.$i, $queryConditions[$i], $pdo);
-                }
-            }
-            else
-            {
-                if (is_numeric($queryConditions))
-                {
-                    if (is_float($queryConditions))
-                    {
-                        $pdo=\PDO::PARAM_STR;
-                    }else{
-                        $pdo=\PDO::PARAM_INT;
-                    }
-                }else
-                {
-                    $pdo=\PDO::PARAM_STR;
-                }
-                $pdo  =  (is_numeric($queryConditions))?\PDO::PARAM_INT:\PDO::PARAM_STR;
-                $stmt -> bindValue(":".$index, $queryConditions, $pdo);
-                
-            }
-        }
-    }
 
-    /* PERSONNALISE */
-
-    // public function getRacesQuinteOfDay(string $table1, string $table2, array $datasConditions, array $orderBy)
-    // {
-    //     $req = 
-    //     "SELECT $table1.`compteur`, `pronostiqueur`,`index_course`,`ch1`,`ch2`,`ch3`,`ch4`,`ch5`,`ch6`,`ch7`,`ch8`
-    //     FROM $table1
-    //     INNER JOIN $table2 ON $table1.`index_pronostiqueur` = $table2.`index_pronostiqueur`";
-    //     if (count($datasConditions)>0)
-    //     {
-    //         $req .= " WHERE ";
-    //         $req .= $this->querySequelBuilt('AND', $datasConditions);
-    //     }
-    //     if(count($orderBy)>0)$req .= " ORDER BY $orderBy[0] $orderBy[1] ";
-    //     $stmt = $this->getBdd()->prepare($req);
-    //     $this->queryStmtBuilt($stmt,$datasConditions);
-    //     $stmt -> execute();
-    //     $resultat=$stmt->fetchAll(\PDO::FETCH_ASSOC);
-    //     $stmt -> closeCursor();
-    //     return $resultat;
-    // }
 }
