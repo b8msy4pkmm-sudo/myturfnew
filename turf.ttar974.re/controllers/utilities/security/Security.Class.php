@@ -64,7 +64,7 @@ class Security {
     }
 
     public static function isAdministrator(){
-        return($_SESSION['profil']['user_role'] === "admin");
+        return isset($_SESSION['profil']['user_role']) && $_SESSION['profil']['user_role'] === "admin";
     }
 
     public static function visitorSessionCookies()
@@ -79,7 +79,7 @@ class Security {
     {
         $ticket = session_id().microtime().rand(0,999999);
         $ticket = hash("sha512",$ticket);
-        setcookie(self::COOKIE_NAME,$ticket,time()+($_SESSION['sessionTime'])??3600); //actif pendant 8 heures sinon 1 heure en fonction de sesionTime
+        setcookie(self::COOKIE_NAME,$ticket,time()+($_SESSION['sessionTime'] ?? 3600));
         $_SESSION['profil'][self::COOKIE_NAME] = $ticket;
     }
 
