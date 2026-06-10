@@ -1,132 +1,115 @@
-.container-card{
-    width:100%;
+.container-card {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 50px;
+    gap: 40px;
     padding: 20px;
     flex-wrap: wrap;
-    height:100vh;
+    height: 100vh;
 }
 
-.card{ 
-    min-width:300px;
-    max-width:400px;
+.card {
+    min-width: 300px;
+    max-width: 400px;
     height: auto;
-    border:2px solid rgb(209, 200, 200);
-    background: rgb(236, 235, 243);
-    filter : drop-shadow(0px 10px 10px #000);
+    border: 1px solid var(--border-gold);
+    background: var(--bg-card);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4), 0 0 0 1px rgba(201,168,76,0.05);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(201,168,76,0.2);
+    border-color: var(--gold);
 }
 
 .card-img {
-    width:100%;
+    width: 100%;
     height: 60%;
     overflow: hidden;
 }
 
 .img-responsive {
-    width : 100%;
-	height : auto;
+    width: 100%;
+    height: auto;
+    transition: transform 0.4s ease;
 }
 
-.card-menu{
-    align-items:center;
+.card:hover .img-responsive { transform: scale(1.03); }
+
+.card-menu {
+    align-items: center;
     list-style-type: none;
     width: 100%;
-    padding-top:0.3rem;
+    padding-top: 0.3rem;
     display: flex;
-    background:  rgb(191, 129, 53);
+    background: linear-gradient(135deg, var(--gold-dark), #6b5020);
 }
 
-.card-menu-item{
+.card-menu-item {
     display: block;
     padding: 0.5rem;
-    width:7rem;
+    width: 7rem;
     text-align: center;
 }
 
-.card-menu-item-link{
+.card-menu-item-link {
     font-size: var(--fs-16);
-    font-weight: 100;
-    color:azure;
+    font-weight: 300;
+    color: var(--text-primary);
     text-decoration: none;
+    transition: color 0.2s ease;
 }
 
-.card-menu-item-link::after{
-    content:"";
-    display:block;
-    margin: 0.125rem  auto;
-    width:0%;
+.card-menu-item-link::after {
+    content: "";
+    display: block;
+    margin: 0.125rem auto;
+    width: 0%;
     height: 0.125rem;
-    background-color:azure;
+    background: var(--gold-light);
     transition: width 0.3s ease-in-out;
 }
 
-.card-menu-item-link:hover::after{
-    width:100%;
+.card-menu-item-link:hover::after { width: 100%; }
+.card-menu-item-link:hover { color: var(--gold-light); font-weight: 500; }
+
+.card-block-title {
+    padding: 0.4rem 0;
+    height: 4rem;
 }
 
-.card-menu-item-link:hover{
-    font-weight:700;
-}
-
-.card-block-title{
-    padding-top: 0.4rem;
-    padding-bottom: 0.4rem;
-    height:4rem;
-}
 .card-title {
-    padding : 10px;
-    color:rgb(101, 39, 246);
+    padding: 10px;
+    color: var(--gold-light);
+    font-weight: 600;
 }
 
 .card-info {
-    padding:10px 10px 10px 10px;
+    padding: 10px;
     font-size: smaller;
+    color: var(--text-secondary);
 }
 
 .card-link {
-    padding: 0px 10px;
+    padding: 0 10px;
     text-decoration: none;
-    
-} 
-
-.card-link::after{
-    content:"";
-    display:inline;
-    margin: 0.125rem  auto;
-    width:0%;
-    height: 0.125rem;
-    background-color:azure;
-    transition: width 0.3s ease-in-out;
+    color: var(--gold);
+    transition: color 0.2s ease;
 }
 
-.card-link:hover::after{
-    width:90%;
+.card-link:hover { color: var(--gold-light); }
+
+@media screen and (max-width: 520px) {
+    .card-title { padding: 5px; font-size: var(--fs-16); }
+    .container-card { height: 100%; margin-top: 50px; margin-bottom: 100px; gap: 70px; }
+    .card-input { height: 2.5rem !important; width: 170px; }
 }
 
-@media screen and (max-width:520px){
-    .card-title {
-        padding: 5px;
-        font-size: var(--fs-16);
-    }
-    .container-card{
-        height:100%;
-        margin-top: 50px;
-        margin-bottom: 100px;
-        gap:70px;
-    }
-
-    .card-input{
-        height: 2.5rem!important;
-        width: 170px;
-    }
-
-}
-
-@media screen and (max-width:380px){
-    .card-img {
-    height: 50%;
-    }
-
+@media screen and (max-width: 380px) {
+    .card-img { height: 50%; }
 }
