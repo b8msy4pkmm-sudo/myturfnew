@@ -51,6 +51,7 @@
 }
 
 .card-menu-item {
+    position: relative;
     display: block;
     padding: 0.5rem;
     width: 7rem;
