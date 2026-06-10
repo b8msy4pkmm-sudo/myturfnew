@@ -17,7 +17,7 @@
 ?>
 
 <div id="user-manage" class="dialog-box bg-none">
-    <h1 class="form-title title-black">Administration</h1>
+    <h1 class="page-title">Administration</h1>
     <?php if (count($othersUsersDatas)>0) :?>
     <table class="<?= $displayNone==0?'':'display-none';?>">
         <caption class="h-40"> Liste des utilisateurs</caption>
