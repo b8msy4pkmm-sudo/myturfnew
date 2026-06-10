@@ -1,7 +1,7 @@
 <?php
 namespace MAIN_NAMESPACE\datas;
 
-require_once __DIR__.'/../../config.php';
+require_once __DIR__.'/../config.php';
 
 abstract class AccessDB
 {
