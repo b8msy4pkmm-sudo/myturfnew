@@ -12,6 +12,8 @@ define ("RACE_TYPE",['Attelé', 'Haies', 'Monté','Plat','Steeple']);
 define ("REUSSITE_MIN",15);
 define ("RDT_MIN",120);
 
+use MAIN_NAMESPACE\controllers\visitor\VisitorController;
+use MAIN_NAMESPACE\controllers\Member\MemberController;
 use MAIN_NAMESPACE\utilities\toolbox\Toolbox;
 use MAIN_NAMESPACE\utilities\security\Security;
 
