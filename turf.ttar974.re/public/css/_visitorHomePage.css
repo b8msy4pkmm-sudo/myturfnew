@@ -1,53 +1,31 @@
-
-/* PAGE LOGIN */
-
-li label{
-    display: inline-block;
-    font-size: smaller;
-    color:rgb(131, 158, 159);
-    padding-left:0.2rem;
-}
-
-.forgetten-pwd{
-    margin-top:-1.1rem;
-    text-align: right;
-    margin-bottom: 0.3rem;
-    padding: 0 0.5rem;
-    font-style: italic;
-    font-weight: 100;
-    font-size: var(--fs-14);
-}
-
-.forgetten-pwd a{
-    text-decoration: none;
-}
-
-.forgetten-pwd a::after{
-    content:"";
-    display:block;
-    width:0%;
-    height: 0.0625rem;
-    text-decoration: none;
-    background: #f1f1f1;
-    transition: width 0.2s ease-in-out;
-    margin-left:77%;
-}
-
-.forgetten-pwd a:hover::after{
-    width:22%;
-}
-
-.space-login{
+.visitor-login-wrapper {
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    height:770px;
-    margin-top:0rem;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
 }
 
-/* PAGE LOGIN */
-@media screen and (max-width:520px){
-    .forgetten-pwd{
-        padding: 0.2rem 0.9rem 0rem;
-    }
+.visitor-login-box {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-gold);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    width: 100%;
+    max-width: 440px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(201,168,76,0.05);
+}
+
+.visitor-login-box .form-title {
+    margin-bottom: 2rem;
+}
+
+.visitor-login-box .form-title::after {
+    content: "";
+    display: block;
+    width: 3rem;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold-dark), var(--gold));
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
 }

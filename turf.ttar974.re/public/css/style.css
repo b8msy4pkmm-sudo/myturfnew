@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&family=Roboto:wght@300;400;500;700;900&display=swap');
 @import "./__common.css";
 @import "./__tools.css";
@@ -7,113 +6,93 @@
 @import "./_button.css";
 @import "./_nav_menu.css";
 
-body{
+body {
     position: relative;
-    background: rgba(220, 220, 220, 0.656);
+    background: var(--bg-primary);
+    background-image:
+        radial-gradient(ellipse at 20% 50%, rgba(26,122,60,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(201,168,76,0.04) 0%, transparent 50%);
+    min-height: 100vh;
+    color: var(--text-primary);
 }
 
-.container-main{
+.container-main {
     position: absolute;
-    top:3.8rem;
-    left:0;
-    width:100%;
+    top: 3.8rem;
+    left: 0;
+    width: 100%;
     min-width: 300px;
-    margin:0 auto;
+    margin: 0 auto;
 }
 
-
-
-/* .container-card{
-    width:100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    padding: 20px;
-    flex-wrap: wrap;
-    height:100vh;
-} */
-
-.container{
-    margin-top:0.8rem;
+.container {
+    margin-top: 0.8rem;
     height: 100%;
 }
 
-.sub-container{
+.sub-container {
     width: 420px;
     height: 100%;
 }
 
-.sub-container-admin{
+.sub-container-admin {
     width: 600px;
     height: 100%;
 }
 
-.error-page{
+.error-page {
     display: flex;
     position: relative;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height:100%;
+    height: 100%;
 }
 
-.signMeIn{
-    width:99%;
-    margin:0 auto;
-    padding:0.3125rem 0.5rem;
+.signMeIn {
+    width: 99%;
+    margin: 0 auto;
+    padding: 0.3125rem 0.5rem;
     margin-top: 0.6rem;
     background-color: transparent;
     text-align: center;
     font-weight: 100;
     font-size: var(--fs-14);
+    color: var(--text-secondary);
 }
 
-.signMeIn a{
+.signMeIn a {
     text-decoration: none;
     font-weight: 700;
     font-size: var(--fs-14);
+    color: var(--gold);
+    transition: color 0.2s ease;
 }
 
-.signMeIn a:hover{
+.signMeIn a:hover {
+    color: var(--gold-light);
     text-decoration: underline;
 }
 
-.stat-period{
-    width:160px;
+.stat-period { width: 160px; }
+
+@media screen and (max-width: 520px) {
+    .sub-container, .sub-container-admin { width: 390px; }
 }
 
-@media screen and (max-width:520px){
-    .sub-container, .sub-container-admin{
-        width: 390px;
-    }
-
-    /* .container-card{
-        height:100%;
-    } */
-
+@media screen and (max-width: 420px) {
+    .stat-title { display: none; }
+    .stat-period { width: 155px; }
 }
 
-@media screen and (max-width:420px){
-    .stat-title{
-        display: none;
-    }
-    .stat-period{
-        width:155px;
-    }
-
-}
-
-@media screen and (max-width:380px){
-    .sub-container, .sub-container-admin{
+@media screen and (max-width: 380px) {
+    .sub-container, .sub-container-admin {
         margin-top: 2rem;
-        width:320px;
-        height:100%;
+        width: 320px;
+        height: 100%;
     }
 }
 
-@media screen and (max-width:350px){
-    .stat-period{
-        width:145px;
-    }
+@media screen and (max-width: 350px) {
+    .stat-period { width: 145px; }
 }
