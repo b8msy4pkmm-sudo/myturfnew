@@ -39,11 +39,9 @@ class TurfController extends Page{
                 $_SESSION['tipsterOfDayExist']=true;
             }
             /* A mettre en commentaire une fois la duplication du champ index_pronotiqueur */
-            //$this->duplicateField("courses_pronostics","index_tipster","index_pronostiqueur");
         }else
         {
             Toolbox::addMessageAlert("Course du jour inexistante !",Toolbox::COLOR_WARNING);
-            //$this->resetRacingHorse();
         };
         $this->updateRaceOfDay($raceOfDay);
         $this->updateRaceWinningsOfDay($horseRacingWinnings??[]);
@@ -81,8 +79,6 @@ class TurfController extends Page{
             ];
             $nameHippodromeOfDay=$this->horseRacing->getOneRowDatasFromTable('courses_hippodrome',['index_hippodrome'=>$raceOfDay['index_hippodrome']]);
             $horseRacingWinnings=$this->horseRacing->getOneRowDatasFromTable('course_gains',$datasCondition);
-
-            // On récupère les pronostics du pronostiqueur sélectionné lorsque c'est le cas
             if($_SESSION['horseRacing']['page']==="raceTipster")
             {
                 $tipsterOfDay=$this->getTipstersOfDay($datasCondition,['index_tipster'=>$_SESSION['tipsterSelected']??"P1"]);
@@ -114,8 +110,6 @@ class TurfController extends Page{
             "tipsters"            => $tipsters??[],
             "raceOfDay"           => $raceOfDay??[],
             "nameHippodromeOfDay" => $nameHippodromeOfDay??[],
-        // Peut etre à remplacer par ceci
-        //  "nameHippodrome"      => $nameHippodromeOfDay['hippodrome']??"",
 
             "racingWinnings"      => $horseRacingWinnings??[],
             "allHippodromes"      => $allHippodromes??[],
@@ -192,7 +186,6 @@ class TurfController extends Page{
                             'index_course'=>$_SESSION['dateEndChange']['index_course'],
                             'index_tipster'=>$tipster['index_pronostiqueur']
                         ];
-                        //On récupère le pronostic de la date de fin pour l'étude des stats;
                         $tipsOfDay = $this->horseRacing->getOneRowDatasFromTable('courses_pronostics',$conditions);
                         foreach ($_SESSION['resultsOfFilters'] as $filterByTipster) 
                         {
@@ -310,7 +303,7 @@ class TurfController extends Page{
                         $resultsbyTipster=[
                             'tipster'     => $tipster['pronostiqueur'],
                             'tipsOfDay'   => $tipsOfDay??[],
-                            //'WinsOfDay'   => $winningsOfDateEnd,
+                            /
                             'nbRaces'     => $countTipster,
                             'nbGame'      => $nbGame,
                             'cumulAmount' => $cumulAmount,
@@ -424,20 +417,16 @@ class TurfController extends Page{
         }
         if(empty($post['min_length']) && empty($post['max_length']))
         {
-            //Toolbox::addMessageAlert("Toutes distances sélectionnées",Toolbox::COLOR_WARNING);
             $_SESSION['racingStats']['min_length']="";
             $_SESSION['racingStats']['max_length']="";
             $_SESSION['racingStats']['trackLength']=[];
         }else if (!empty($post['min_length']) && empty($post['max_length'])){
-            //Toolbox::addMessageAlert("toutes les distances >= à ".$post['min_length'],Toolbox::COLOR_WARNING);
             $_SESSION['racingStats']['min_length']=(int)Security::secureHTML($post['min_length']);
             $_SESSION['racingStats']['trackLength']=[">=",$_SESSION['racingStats']['min_length']];
         }else if (empty($post['min_length']) && !empty($post['max_length'])){
-            //Toolbox::addMessageAlert("toutes les distances <= à ".$post['max_length'],Toolbox::COLOR_WARNING);
             $_SESSION['racingStats']['max_length']=(int)Security::secureHTML($post['max_length']);
             $_SESSION['racingStats']['trackLength']=["<=",$_SESSION['racingStats']['max_length']];
         }else{
-            //Toolbox::addMessageAlert("toutes les distances >= à ".$post['min_length']." et <= à ".$post['max_length'],Toolbox::COLOR_WARNING);
             $_SESSION['racingStats']['min_length']=(int)Security::secureHTML($post['min_length']);
             $_SESSION['racingStats']['max_length']=(int)Security::secureHTML($post['max_length']);
             $_SESSION['racingStats']['trackLength']=["><",$_SESSION['racingStats']['min_length'],$_SESSION['racingStats']['max_length']];
@@ -593,42 +582,6 @@ class TurfController extends Page{
         return $this->horseRacing->getWithJoinDatasFrom2Tables($elementOfTable_1,$elementOfTable_2, $conditions, $orderBy);
     }
 
-    // private function getTipsOfDay($datasConditions,$otherDatasConditions)
-    // {
-    //     $conditions=[];
-    //     $conditions+=$datasConditions;
-    //     if (count($otherDatasConditions)>0)$conditions+=$otherDatasConditions;
-    //     $orderBy=['date_course','ASC'];
-    //     $elementOfTable_1=[
-    //         'nameOfTable'  => 'courses_pronostics',
-    //         'keyForJoin'   => 'index_course',
-    //         'columnHeader' => ['index_course','index_tipster','ch1','ch2','ch3','ch4','ch5','ch6','ch7','ch8']
-    //     ];
-    //     $elementOfTable_2=[
-    //         'nameOfTable'  => 'courses_arrivee',
-    //         'keyForJoin'   => 'index_course',
-    //         'columnHeader' => ['date_course']
-    //     ];
-    //     return $this->horseRacing->getWithJoinDatasFrom2Tables($elementOfTable_1,$elementOfTable_2, $conditions, $orderBy);
-    // }
-
-    private function duplicateField($table,$fieldToDuplicate,$fieldInitial)
-    {
-        $allRows=$this->horseRacing->getFewRowsDatasFromTable($table, [], []);
-        foreach ($allRows as $row) {
-            
-            $cond=[
-                'compteur'=>$row['compteur']
-            ];
-            $updateDatas=[
-                $fieldToDuplicate=>$row[$fieldInitial]
-            ];
-            $update=$this->horseRacing->updateDatasInDataTable($table,$updateDatas,$cond);
-        }
-    }
-
-
-
     private function getConditionsCommonOfFilter():array
     {
         $date_start   = $_SESSION['horseRacingsDate']['dateStart']->format('Y-m-d');
@@ -662,6 +615,6 @@ class TurfController extends Page{
             $i++;
             $update=$this->horseRacing->updateDatasInDataTable($table,$updateDatas,$cond);
         }
-        toolbox::addMessageAlert("compteur : ".$i,Toolbox::COLOR_SUCCESS);
+        Toolbox::addMessageAlert("compteur : ".$i,Toolbox::COLOR_SUCCESS);
     }
 }
