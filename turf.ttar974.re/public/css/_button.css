@@ -1,0 +1,43 @@
+
+/* BOUTONS POUR FORMULAIRE */
+.btn-zone{
+    width:96%;
+    margin:0 auto;
+    text-align: center;
+}
+
+.btn-form{
+    border-radius: 10px;
+    border:none;
+    cursor: pointer;
+    position: relative;
+    background-color: green;
+    color:#f1f1f1;
+    font-size: 1.2rem;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.4);
+    padding:10px;
+    z-index:1;
+}
+
+.btn-form::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:-1;
+    border-radius: 5px;
+    background-color: rgb(88, 144, 4);
+    opacity: 0;
+    transition: all 0.6s ease-out;
+}
+
+.btn-form:hover::before{
+    border: 1px solid yellow;
+    opacity: 1;
+}
+
+.btn-form:hover{
+    color:yellow;
+}

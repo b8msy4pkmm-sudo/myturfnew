@@ -1,0 +1,67 @@
+*, ::before, ::after{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+  }
+  
+/* a {
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: underline;
+} */
+
+:root {
+/* palette de coulours */
+
+/* formulaire */
+--form-fields-bg: rgb(249, 249, 221);;
+--form-fields-border: rgb(182, 182, 197);
+--form-fields-focus-outline: rgb(117, 117, 223);
+--form-fields-focus-bg:ghostwhite;
+--form-btn-bg:rgb(79, 119, 137);
+--form-btn-border:azure;
+--form-btn-font:#f1f1f1;
+--form-btn-font-hover:goldenrod;
+--form-label-font:gray;
+--form-label-bg:aliceblue;
+--form-text-color:rgb(95, 6, 179);
+
+/* Message Alerte */
+--color-alert-bg-success:rgb(90, 132, 90);
+--color-alert-bg-warning:rgb(245, 151, 74);
+--color-alert-bg-danger:rgb(201, 53, 53);
+--color-alert-font-gold:gold;
+--color-alert-font :rgb(231, 238, 231);
+--color-alert-font-warning :rgb(74, 17, 17);
+--color-alert-border:rgb(195, 201, 195);
+--color-alert-btn:rgb(195, 201, 195);
+
+/* Fonts */
+--base-font: Roboto, sans-serif;;
+--title-font: Palanquin, sans-serif;
+
+/* Font-size */
+--fs-12: 0.75rem;
+--fs-14: 0.875rem;
+--fs-16: 1rem;
+--fs-18: 1.125rem;
+--fs-20: 1.25rem;
+--fs-24: 1.5rem;
+--fs-30: 1.875rem;
+--fs-36: 2.25rem;
+--fs-42: 2.625rem;
+--fs-50: 3.125rem;
+--fs-72: 4.5rem;
+
+}
+
+body,input,select,textarea,button{
+  font-family: var(--base-font);
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-family: var(--title-font);
+}
+

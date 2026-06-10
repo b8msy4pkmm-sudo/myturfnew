@@ -1,0 +1,33 @@
+table {
+    width: 100%;
+    border: 1px solid black;
+    margin-bottom: 2rem;
+    border-collapse: collapse;
+}
+
+thead{
+    background-color:darkcyan;
+    color: rgb(199, 239, 239);
+
+}
+.cell{
+    color: var(--form-text-color);
+}
+
+td{
+    padding:0.5rem;
+}
+
+tr{
+    border-bottom: 1px solid rgb(203, 198, 198);
+}
+
+th{
+    padding:0.5rem;
+}
+
+@media screen and (max-width:520px){
+    .cell{
+        font-size: 0.9rem;
+    }
+}

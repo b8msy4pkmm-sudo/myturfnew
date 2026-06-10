@@ -1,0 +1,100 @@
+.container-filter{
+    max-width:600px;
+    margin:0 auto;
+}
+
+#selectHippo.group-fields, #selectTipster.group-fields{
+    height:170px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-bottom: 0.2rem;
+}
+
+#toggleSelectHippo.group-fields,#toggleSelectTipster.group-fields, #selectRaceType.group-fields{
+    margin-bottom: 0;
+}
+
+#toggleSelectLength.group-fields_checkbox{
+    margin-bottom: 0;
+}
+
+#toggleSelectLength li, #toggleSelectHippo li, #toggleSelectTipster li{
+    margin-top:-0.5rem;
+}
+
+#selectRaceType ul{
+    margin-top:-0.8rem;
+}
+.container-filter_game-type{
+    margin-top:0.5rem;
+}
+
+.selectTrackLength{
+    width:96%;
+    margin: 0 auto;
+}
+.toggleSelectHippo, .toggleSelectTipster, .selectRaceType{
+    margin-top:0.25rem;
+}
+
+.selectTrackLength, .toggleSelectHippo, .toggleSelectTipster, .selectRaceType{
+    height:52px;
+    margin-bottom: 0.22rem;
+}
+
+.trackLengthSeleted{
+    width:400px;
+}
+
+.result-filter{
+    margin:0 auto;
+    padding: 10px 25px;
+}
+
+.result-filter .signMeIn{
+    margin-top: 0.4rem;
+}
+
+@media screen and (max-width:520px){
+    .selectTrackLength{
+        width:90%;
+    }
+    .fields-checkbox .li-label, .fields-input, .fields-select{
+        font-size:var(--fs-16);
+    }
+}
+
+@media screen and (max-width:480px){
+    .btnViewFilter, .btnMaskFilter{
+        font-size: 1rem;
+    }
+    .zone-btn-filter{
+        min-width: 130px;
+    }
+
+    .p-filter{
+        font-size: 0.8rem;
+    }
+        .fields-checkbox .li-label, .fields-input, .fields-select{
+        font-size:var(--fs-14);
+    }
+}
+
+@media screen and (max-width:380px){
+    .btnViewFilter, .btnMaskFilter{
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width:360px){
+    .card-title{
+        display: none;
+    }
+    .selectRaceType .group-fields_checkbox{
+        height:5rem!important;
+    }
+    .selectTrackLength{
+        margin-top:30px;
+    }
+
+}

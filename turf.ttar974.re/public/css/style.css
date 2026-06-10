@@ -1,0 +1,119 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Palanquin:wght@100;200;300;400;500;600;700&family=Roboto:wght@300;400;500;700;900&display=swap');
+@import "./__common.css";
+@import "./__tools.css";
+@import "./_alert.css";
+@import "./_form.css";
+@import "./_button.css";
+@import "./_nav_menu.css";
+
+body{
+    position: relative;
+    background: rgba(220, 220, 220, 0.656);
+}
+
+.container-main{
+    position: absolute;
+    top:3.8rem;
+    left:0;
+    width:100%;
+    min-width: 300px;
+    margin:0 auto;
+}
+
+
+
+/* .container-card{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+    flex-wrap: wrap;
+    height:100vh;
+} */
+
+.container{
+    margin-top:0.8rem;
+    height: 100%;
+}
+
+.sub-container{
+    width: 420px;
+    height: 100%;
+}
+
+.sub-container-admin{
+    width: 600px;
+    height: 100%;
+}
+
+.error-page{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:100%;
+}
+
+.signMeIn{
+    width:99%;
+    margin:0 auto;
+    padding:0.3125rem 0.5rem;
+    margin-top: 0.6rem;
+    background-color: transparent;
+    text-align: center;
+    font-weight: 100;
+    font-size: var(--fs-14);
+}
+
+.signMeIn a{
+    text-decoration: none;
+    font-weight: 700;
+    font-size: var(--fs-14);
+}
+
+.signMeIn a:hover{
+    text-decoration: underline;
+}
+
+.stat-period{
+    width:160px;
+}
+
+@media screen and (max-width:520px){
+    .sub-container, .sub-container-admin{
+        width: 390px;
+    }
+
+    /* .container-card{
+        height:100%;
+    } */
+
+}
+
+@media screen and (max-width:420px){
+    .stat-title{
+        display: none;
+    }
+    .stat-period{
+        width:155px;
+    }
+
+}
+
+@media screen and (max-width:380px){
+    .sub-container, .sub-container-admin{
+        margin-top: 2rem;
+        width:320px;
+        height:100%;
+    }
+}
+
+@media screen and (max-width:350px){
+    .stat-period{
+        width:145px;
+    }
+}

@@ -1,0 +1,78 @@
+.profil-pwd{
+    text-align: center;;
+    margin : 0 auto;
+    margin-top:1rem;
+}
+#btn-modify-pwd{
+    /* margin-left: 2rem; */
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-family: var(--title-font);
+    font-size: var(--fs16);
+    color: rgb(101, 109, 225);
+}
+#btn-modify-pwd::after{
+    content:"";
+    display:block;
+    margin:0 auto;
+    width:0%;
+    height: 0.2rem;
+    background-color: rgb(161, 14, 161);
+    transition: width 0.3s ease-in-out;
+}
+#btn-modify-pwd:hover::after{
+    width:100%;
+}
+#btn-modify-pwd:hover{
+    color: rgb(161, 14, 161);
+}
+.user-picture{
+    /* min-width: 20rem; */
+    max-width: 28.125rem;
+    margin : 0 auto;
+    text-align: center;
+}
+.user-picture img{
+    margin-top: 2rem;
+    width:18.75rem;
+    height:18.75rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* @media screen and (max-width:790px){
+    .main-content{
+        flex-direction: column;
+        }
+    .dialog-box{
+        min-width: 320px; 
+    }
+} */
+
+/* @media screen and (max-width:361px){
+    th{
+        font-size: 0.8rem;
+    }
+    tr{
+        font-size: 0.8rem;
+    }
+} */
+
+@media screen and (max-width:320px){
+    /* .dialog-box{
+        width:16.5rem; 
+    } */
+    .user-picture{
+        width: 17.5rem;
+    }
+    .user-picture img{
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+        width:14.5rem;
+        height:14.5rem;
+    }
+    .main-title{
+        font-size: 1.8rem;
+    }
+}

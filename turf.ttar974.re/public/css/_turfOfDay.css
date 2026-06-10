@@ -1,0 +1,179 @@
+.turfOfDay-container{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    max-width: 800px;
+    margin:0 auto;
+    padding:15px;
+}
+
+.turfOfDay-subcontainer{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    margin : 0 auto;
+    max-width: 420px;
+}
+
+.turfOfDay-subcontainer h2{
+    text-align: center;
+    margin-bottom: 20px;;
+}
+
+.tipsters-of-day{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    border-bottom: 0.9px dashed rgb(40, 60, 111);
+}
+
+.tipsters-of-day_name{
+    font-size:larger;
+    font-weight: 300;
+
+}
+
+.tipsters-of-day_tips{
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap:10px;
+}
+
+.turfOfDay-result{
+    margin:0 auto;
+    padding: 10px;
+    max-width:800px;
+}
+
+.turfOfDay-result_img{
+    width:35px;
+    margin-left:15px;
+    cursor: pointer;
+}
+
+.turfOfDay-result_img img{
+    width:100%;
+}
+
+.turfOfDay-race-winnings,.turfOfDay-race-arrival{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.turfOfDay-input-winnings{
+    width:120px;
+}
+
+.turfOfDay-input-arrival{
+    width:80px;
+}
+
+.colorCh1{
+    background-color: rgb(168, 45, 108);
+    color:azure;
+}
+
+.colorCh2{
+    background-color: rgb(11, 132, 202);
+    color:azure;
+}
+
+.colorCh3{
+    background-color: rgb(167, 212, 126);
+    color:azure;
+}
+.colorCh4{
+    background-color: rgb(147, 87, 243);
+    color:azure;
+}
+.colorCh5{
+    background-color: rgb(247, 239, 212);
+    color:rgb(70, 79, 79);
+}
+
+.tips{
+    width:35px;
+    height: 30px;
+    font-size: var(--fs-24);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+}
+
+.tips_final{
+ font-size: var(--fs-24);
+ width: 100px;
+}
+
+/* ----- Affichage tableau des gains ----- */
+.turfOfDay_table-winnings{
+    height : 440px;
+    width:100%;
+}
+.table-winnings{
+    width:100%;
+    padding:0.2rem;
+    margin: 0.5rem auto;
+    border-collapse: collapse;
+}
+.table-winnings-cell_title{
+    background: #9bc5ae;
+}
+.table-winnings-cell_th{
+    max-width: 90px;
+    min-width: 60px; 
+    background: #ddfce8; 
+}
+.table-winnings-cell{
+    max-width: 90px;
+    min-width: 60px;
+    text-align: center;
+    font-size: small;
+    padding: 0.2rem;
+    background:azure;
+}
+
+@media screen and (max-width:660px){
+    .turfOfDay-container{
+        padding: 20px;
+    }
+    .tips{
+        font-size: var(--fs-20);
+    }
+    .tips_final{
+        font-size: var(--fs-20);
+       }
+    .tipsters-of-day_name{
+        font-size: medium;
+    }
+    .tipsters-of-day_tips{
+        gap:5px;
+    }
+}
+
+@media screen and (max-width:470px){
+    .tipsters-of-day{
+        flex-direction: column;
+    }
+
+    .tipsters-of-day_name{
+        font-size:small;
+    }
+    .tipsters-of-day_tips{
+        gap: 1px;
+    }
+    .tips{
+        width:25px;
+        height: 25px;
+        font-size: var(--fs-16);
+        text-align: center;
+    }
+    .tips_final{
+        font-size: var(--fs-26);
+       }
+}
+
