@@ -5,7 +5,7 @@ use MAIN_NAMESPACE\utilities\toolbox\Toolbox;
 abstract class Page 
 {
     
-    protected const MAIN_CSS=['style.css'];
+    protected const MAIN_CSS=['__common.css','__tools.css','_alert.css','_form.css','_button.css','_nav_menu.css','style.css'];
     protected const MAIN_JS =['_alert.js','_nav.js'];
     protected const KEY_PASS="CoDeRuN!974";
 
