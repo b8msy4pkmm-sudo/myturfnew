@@ -166,7 +166,7 @@
 @media screen and (max-width: 520px) {
     .dropdown-menu { margin-left: 0; left: 0; }
     .dropdown-menu-item { font-size: var(--fs-16); min-height: 44px; display: flex; align-items: center; }
-    .dropdown-menu-item__link { padding: 0 0.6rem; width: 100%; min-height: 44px; line-height: 44px; }
+    .dropdown-menu-item__link { padding: 0 0.8rem; width: 100%; min-height: 44px; line-height: 44px; white-space: nowrap; }
     .menu-navbar { justify-content: space-between; margin-right: 0; }
     .menu-item { width: auto; padding: 0 0.4rem; }
     .menu-item-link { font-size: var(--fs-16); min-height: 44px; display: flex; align-items: center; }
