@@ -7,7 +7,7 @@
     padding: 20px;
     flex-wrap: wrap;
     height: auto;
-    min-height: 50vh;
+    min-height: calc(100vh - 7rem);
 }
 
 .card {
