@@ -1,5 +1,5 @@
 <?php
-ini_set('memory_limit', '768M');
+ini_set('memory_limit', '128M');
 session_start();
 //ini_set('display_errors', 'on');
 date_default_timezone_set('Indian/Reunion');
@@ -8,31 +8,20 @@ include("./views/common/noRefreshForm.php");
 // URL principal du site
 define ("URL", str_replace("index.php","",(isset($_SERVER['HTTPS'])?"https":"http")."://".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']));
 
-//define("MAIN_NAMESPACE","turf_ttar974");
-
 define ("RACE_TYPE",['Attelé', 'Haies', 'Monté','Plat','Steeple']);
 define ("REUSSITE_MIN",15);
 define ("RDT_MIN",120);
 
-use MAIN_NAMESPACE\controllers\Admin\AdminController;
-use MAIN_NAMESPACE\controllers\Member\MemberController;
-use MAIN_NAMESPACE\controllers\visitor\VisitorController;
-use MAIN_NAMESPACE\controllers\member\turf\TurfController;
 use MAIN_NAMESPACE\utilities\toolbox\Toolbox;
 use MAIN_NAMESPACE\utilities\security\Security;
-use Random\Engine\Secure;
 
 require_once("./controllers/utilities/toolbox/Toolbox.Class.php");
 require_once("./controllers/utilities/forms/Forms.Class.php");
 require_once("./controllers/visitor/Visitor.Class.php");
 require_once("./controllers/member/Member.Class.php");
-require_once("./controllers/admin/Admin.Class.php");
-require_once("./controllers/member/turf/Turf.Class.php");
 
 $visitor = new VisitorController();
 $member  = new MemberController();
-$admin   = new AdminController();
-$racing  = new TurfController();
 
 // $_SESSION['horseRacingsDate']['date']=new DateTime();
 // $_SESSION['horseRacingsDate']['dateStart']=new DateTime('2022-01-01');
@@ -398,6 +387,8 @@ try
                     break;
 
                     case "raceHorse":
+                        require_once("./controllers/member/turf/Turf.Class.php");
+                        $racing = new \MAIN_NAMESPACE\controllers\member\turf\TurfController();
                         if(isset($url[2])){
                             switch($url[2])
                             {
@@ -713,6 +704,8 @@ try
                     break;
 
                     case "racingStats":
+                        require_once("./controllers/member/turf/Turf.Class.php");
+                        $racing = new \MAIN_NAMESPACE\controllers\member\turf\TurfController();
                         if(isset($url[2]))
                         {
                             switch ($url[2])
@@ -904,6 +897,8 @@ try
                     break;
 
                     case "manageAccess":
+                        require_once("./controllers/admin/Admin.Class.php");
+                        $admin = new \MAIN_NAMESPACE\controllers\Admin\AdminController();
                         $admin->accessManageAccess();
                     break;
 
@@ -912,6 +907,10 @@ try
                     break;
 
                     case"admin":
+                        require_once("./controllers/admin/Admin.Class.php");
+                        require_once("./controllers/member/turf/Turf.Class.php");
+                        $admin = new \MAIN_NAMESPACE\controllers\Admin\AdminController();
+                        $racing = new \MAIN_NAMESPACE\controllers\member\turf\TurfController();
                         switch ($url[2])
                         {
                             case "user":
