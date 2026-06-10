@@ -77,7 +77,7 @@ body {
 .stat-period { width: 160px; }
 
 @media screen and (max-width: 520px) {
-    .sub-container, .sub-container-admin { width: 390px; }
+    .sub-container, .sub-container-admin { width: calc(100% - 24px); max-width: 420px; }
 }
 
 @media screen and (max-width: 420px) {
@@ -88,7 +88,7 @@ body {
 @media screen and (max-width: 380px) {
     .sub-container, .sub-container-admin {
         margin-top: 2rem;
-        width: 320px;
+        width: calc(100% - 16px);
         height: 100%;
     }
 }

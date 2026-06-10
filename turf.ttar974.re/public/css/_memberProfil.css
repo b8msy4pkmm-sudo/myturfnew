@@ -10,7 +10,7 @@
     border: none;
     font-family: var(--title-font);
     font-size: var(--fs16);
-    color: rgb(101, 109, 225);
+    color: var(--gold);
 }
 #btn-modify-pwd::after{
     content:"";
@@ -18,14 +18,14 @@
     margin:0 auto;
     width:0%;
     height: 0.2rem;
-    background-color: rgb(161, 14, 161);
+    background: var(--gold-dark);
     transition: width 0.3s ease-in-out;
 }
 #btn-modify-pwd:hover::after{
     width:100%;
 }
 #btn-modify-pwd:hover{
-    color: rgb(161, 14, 161);
+    color: var(--gold-light);
 }
 .user-picture{
     /* min-width: 20rem; */
@@ -41,23 +41,23 @@
     border-radius: 50%;
 }
 
-/* @media screen and (max-width:790px){
+@media screen and (max-width:790px){
     .main-content{
         flex-direction: column;
         }
     .dialog-box{
         min-width: 320px; 
     }
-} */
+}
 
-/* @media screen and (max-width:361px){
+@media screen and (max-width:361px){
     th{
         font-size: 0.8rem;
     }
     tr{
         font-size: 0.8rem;
     }
-} */
+}
 
 @media screen and (max-width:320px){
     /* .dialog-box{
