@@ -41,7 +41,7 @@
     text-decoration: none;
     font-size: var(--fs-18);
     font-weight: 300;
-    color: var(--text-primary);
+    color: #e8dfc8;
     transition: color 0.2s ease;
 }
 
@@ -87,7 +87,7 @@
 
 .dropdown-menu-item__link {
     text-decoration: none;
-    color: var(--text-primary);
+    color: #1a1a1a;
 }
 
 .dropdown-menu-item:hover {
