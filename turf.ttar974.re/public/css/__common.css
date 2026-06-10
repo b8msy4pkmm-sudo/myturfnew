@@ -5,45 +5,45 @@
 }
 
 :root {
-    --bg-primary:       #0d1117;
-    --bg-secondary:     #161b22;
-    --bg-card:          #1c2333;
-    --bg-card-hover:    #232d42;
-    --bg-input:         #0d1117;
+    --bg-primary:       #f8f5f0;
+    --bg-secondary:     #ffffff;
+    --bg-card:          #fff9f0;
+    --bg-card-hover:    #fff3e0;
+    --bg-input:         #ffffff;
 
-    --gold:             #c9a84c;
-    --gold-light:       #e8c96d;
+    --gold:             #b8860b;
+    --gold-light:       #c9a84c;
     --gold-dark:        #8a6f2e;
     --green-racing:     #1a7a3c;
     --green-light:      #22a050;
     --green-dark:       #0f4d25;
 
-    --text-primary:     #e6edf3;
-    --text-secondary:   #8b949e;
-    --text-muted:       #484f58;
-    --border-color:     #30363d;
-    --border-gold:      #c9a84c55;
+    --text-primary:     #1a1a1a;
+    --text-secondary:   #5a5a5a;
+    --text-muted:       #8a8a8a;
+    --border-color:     #e0d5c5;
+    --border-gold:      #c9a84c88;
 
-    --form-fields-bg:           #0d1117;
-    --form-fields-border:       #30363d;
-    --form-fields-focus-outline: #c9a84c;
-    --form-fields-focus-bg:     #161b22;
+    --form-fields-bg:           #ffffff;
+    --form-fields-border:       #d4c5a9;
+    --form-fields-focus-outline: #b8860b;
+    --form-fields-focus-bg:     #fffdf7;
     --form-btn-bg:              #1a7a3c;
     --form-btn-border:          #22a050;
-    --form-btn-font:            #e6edf3;
-    --form-btn-font-hover:      #c9a84c;
-    --form-label-font:          #8b949e;
-    --form-label-bg:            #161b22;
-    --form-text-color:          #c9a84c;
+    --form-btn-font:            #ffffff;
+    --form-btn-font-hover:      #f8f5f0;
+    --form-label-font:          #5a5a5a;
+    --form-label-bg:            #fff9f0;
+    --form-text-color:          #b8860b;
 
-    --color-alert-bg-success:   #1a3a2a;
-    --color-alert-bg-warning:   #3a2a0a;
-    --color-alert-bg-danger:    #3a0d0d;
-    --color-alert-font-gold:    #c9a84c;
-    --color-alert-font:         #e6edf3;
-    --color-alert-font-warning: #e8c96d;
-    --color-alert-border:       #30363d;
-    --color-alert-btn:          #8b949e;
+    --color-alert-bg-success:   #e8f5e9;
+    --color-alert-bg-warning:   #fff8e1;
+    --color-alert-bg-danger:    #fdecea;
+    --color-alert-font-gold:    #b8860b;
+    --color-alert-font:         #1a1a1a;
+    --color-alert-font-warning: #5a3e00;
+    --color-alert-border:       #e0d5c5;
+    --color-alert-btn:          #5a5a5a;
 
     --base-font:  Roboto, sans-serif;
     --title-font: Palanquin, sans-serif;
@@ -205,7 +205,7 @@ li label {
     padding: 0 0.5rem;
 }
 
-.label-on { top: -0.5rem; z-index: 1; background-color: var(--bg-card); }
+.label-on { top: -0.5rem; z-index: 1; background-color: var(--bg-card); color: var(--gold); }
 .label-out { top: -1rem; z-index: 1; background-color: var(--bg-card); }
 
 .fields ul { list-style-type: none; margin-left: 0.4rem; }
