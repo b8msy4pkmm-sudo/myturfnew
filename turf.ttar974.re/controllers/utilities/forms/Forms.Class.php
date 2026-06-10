@@ -18,10 +18,13 @@ class Form
      * @return string
      */
     public static function createInput(string $class, string $type, string $name, string $formInputValue, string $placeholder, string $option):string
-    { 
-        $classInput= $class!==""?"class='$class'":'';
+    {
+        $classInput= $class!==""?"class='".htmlspecialchars($class,ENT_QUOTES)."'":'';
         $attributes= $option!==''? $option:'';
-        return "<input type='$type' $classInput name='$name' id='$name' value='$formInputValue'  placeholder='$placeholder' $attributes>"; 
+        $safeName        = htmlspecialchars($name, ENT_QUOTES);
+        $safeValue       = htmlspecialchars($formInputValue, ENT_QUOTES);
+        $safePlaceholder = htmlspecialchars($placeholder, ENT_QUOTES);
+        return "<input type='$type' $classInput name='$safeName' id='$safeName' value='$safeValue' placeholder='$safePlaceholder' $attributes>";
     }
 
     /**
@@ -106,6 +109,8 @@ class Form
      */
     public static function createTextarea($name, $comment):string
     {
-        return "<textarea name=$name placeholder='Un commentaire !' id=$name>$comment</textarea>";
+        $safeName    = htmlspecialchars($name, ENT_QUOTES);
+        $safeComment = htmlspecialchars($comment, ENT_QUOTES);
+        return "<textarea name='$safeName' placeholder='Un commentaire !' id='$safeName'>$safeComment</textarea>";
     }
 }

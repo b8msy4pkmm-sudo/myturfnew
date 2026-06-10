@@ -57,8 +57,9 @@ class MemberController extends Page{
     public function memberIdentifiedValidated(array $userIdentification):bool
     {
         $table="members";
-        $userPseudo=['pseudo'=>$userIdentification['pseudo']]; 
+        $userPseudo=['pseudo'=>$userIdentification['pseudo']];
         $userIdentities=$this->member->getOneRowDatasFromTable($table,$userPseudo);
+        if(!$userIdentities) return false;
         if(password_verify($userIdentification['pwd'][1],$userIdentities['pwd'])){
             ($_SESSION['sessionTime']>0)?$_SESSION['sessionTime']=3600*$_SESSION['sessionTime']:$_SESSION['sessionTime']=3600;//Une heure par défaut à changer si besoin
             $dateLogin = new DateTime();
