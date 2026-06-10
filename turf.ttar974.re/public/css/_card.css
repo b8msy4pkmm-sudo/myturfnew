@@ -60,7 +60,7 @@
 .card-menu-item-link {
     font-size: var(--fs-16);
     font-weight: 300;
-    color: var(--text-primary);
+    color: #f5e6c8;
     text-decoration: none;
     transition: color 0.2s ease;
 }

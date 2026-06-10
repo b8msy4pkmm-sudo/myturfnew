@@ -7,7 +7,7 @@
 :root {
     --bg-primary:       #f8f5f0;
     --bg-secondary:     #ffffff;
-    --bg-card:          #fff9f0;
+    --bg-card:          #e8dfc8;
     --bg-card-hover:    #fff3e0;
     --bg-input:         #ffffff;
 
@@ -33,7 +33,7 @@
     --form-btn-font:            #ffffff;
     --form-btn-font-hover:      #f8f5f0;
     --form-label-font:          #5a5a5a;
-    --form-label-bg:            #fff9f0;
+    --form-label-bg:            #e8dfc8;
     --form-text-color:          #b8860b;
 
     --color-alert-bg-success:   #e8f5e9;
