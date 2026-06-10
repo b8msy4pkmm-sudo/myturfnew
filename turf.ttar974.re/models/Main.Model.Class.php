@@ -1,19 +1,17 @@
 <?php
 namespace MAIN_NAMESPACE\datas;
 
-abstract class AccessDB 
+require_once __DIR__.'/../../config.php';
+
+abstract class AccessDB
 {
-    private const HOST_NAME = "91.216.107.79";
-    private const DB_NAME = "ttar92110138";
-    private const USER_NAME = "ttar92110138";
-    private const PWD = "97rpszsbon";    
     private static $pdo = null;
-    
+
     private static function setBdd()
     {
-        self::$pdo = new \PDO('mysql:host='.self::HOST_NAME.';
-                              dbname='.self::DB_NAME.';
-                              charset=utf8',self::USER_NAME,self::PWD);
+        self::$pdo = new \PDO('mysql:host='.DB_HOST.';
+                              dbname='.DB_NAME.';
+                              charset=utf8', DB_USER, DB_PWD);
         self::$pdo->setAttribute(\PDO::ATTR_ERRMODE,\PDO::ERRMODE_EXCEPTION);
     }
 
