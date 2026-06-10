@@ -1,101 +1,46 @@
-.group-fields{
-    width:96%;
-    margin:0 auto;
-    padding:0.3125rem 0.5rem;
-    border-radius:0.5rem;
-    background-color: azure;
-    border:0.0625rem solid rgb(146, 175, 244);
-}
-.group-fields:hover{
-    background-color: rgb(236, 226, 246);
-    outline-offset: 1px;
-    outline-color: rgb(226, 220, 43);
-    outline-style: double;
+.form-group {
+    margin-bottom: 1rem;
 }
 
-.group-fields_input,.group-fields_select,.group-fields_radio,.group-fields_checkbox{
-    margin-bottom: 1.2rem;
+/* Correction fond rose/violet des listes de cases à cocher */
+.group-fields_checkbox,
+.group-fields_radio {
+    background-color: var(--bg-card) !important;
 }
 
-.group-fields_radio,.group-fields_checkbox{
-    height: 100%;
+/* Surcharge du fond hover sur les champs checkbox */
+.group-fields:hover .group-fields_checkbox,
+.group-fields:hover .group-fields_radio {
+    background-color: var(--bg-card-hover) !important;
 }
 
-.fields{
-    width:100%;
-    height:100%;
-    margin-left:0.4rem;
-    margin-right:0.4rem;
-    padding: 0 0.5rem;
-    background-color: transparent;
+input[type="checkbox"],
+input[type="radio"] {
+    accent-color: var(--gold);
 }
 
-.fields-input, .fields-select{
-    border:none;
-    outline: none;
-    font-size:var(--fs-18);
-    color: rgb(161, 14, 161);
-}
-
-.fields-select{
-    margin-left:0rem;
-}
-
-.fields-radio,.fields-checkbox{
-    padding:0.625rem 0;
-}
-
-.label{
+input[type="date"] {
+    background: var(--bg-card);
+    color: var(--gold-light);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 0.2rem 0.4rem;
     font-size: var(--fs-14);
-    font-weight: 400;
-    color:rgb(186, 181, 181);
-    margin-left:0.4rem;
-    padding: 0 0.5rem;
-}
-.label-on{
-    top:-0.5rem;;
-    z-index:1;
-    background-color: white;
-}
-.label-out{
-    top:-1rem;;
-    z-index:1;
-    background-color: white;
-}
-.fields ul{
-    list-style-type: none;
-    margin-left:0.4rem;
-}
-.li-horizontal{
-    display: inline-block;
-    margin-right: 0.4rem;
-}
-.li-vertical{
-    display:block;
-}
-.li-label{
-    margin-top: 0.3rem;
-    padding: 0.1rem;
-    font-size:var(--fs-18);
-    color: rgb(161, 14, 161);
 }
 
-.form-title{
-    text-align: center;
-    font-size: 2.2rem;
+input[type="date"]:focus {
+    outline: none;
+    border-color: var(--gold);
 }
 
-@media screen and (max-width:520px){
-    .group-fields{
-        width:90%;
-        margin-bottom: 0.8rem;
-    }
+select {
+    background: var(--bg-card);
+    color: var(--gold-light);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
 
-    .group-fields_input, .group-fields_select{
-        height: 3.125rem!important;
-    }
-
-    .form-title{
-        font-size: 1.8rem;
-    }
-} 
+select option {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+}
